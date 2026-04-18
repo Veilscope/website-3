@@ -168,7 +168,7 @@ export default function Home() {
                 More customers, less admin.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)] sm:text-xl">
-                From lead follow-up to booking and digital operations, GrovePath helps small businesses save time, reduce missed opportunities, and keep things running more smoothly.
+                From lead follow-up to booking and day-to-day digital operations, GrovePath helps small businesses save time, reduce missed opportunities, and keep things running more smoothly.
               </p>
               <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--muted)]">
                 Smart systems work behind the scenes so you can stay focused on running the business instead of chasing the digital side of it.
