@@ -449,14 +449,26 @@ export default function Home() {
               The first step stays simple. After you reach out, we follow up by email with a few questions about your business, the current bottlenecks, and the kind of support that would make the biggest difference.
             </p>
             {formState.message ? (
-              <p
-                className={`mt-4 text-sm ${
-                  formState.status === "error" ? "text-red-600" : "text-[var(--muted)]"
-                }`}
+              <div
+                className={`mt-4 rounded-xl border px-4 py-3 text-sm font-semibold leading-6 shadow-sm transition-all duration-300 ease-in-out ${
+                  formState.status === "error"
+                    ? "border-[#fecaca] bg-[#fef2f2] text-[#b91c1c]"
+                    : formState.status === "success"
+                    ? "border-[#a7f3d0] bg-[#ecfdf5] text-[#166534]"
+                    : "border-[rgba(112,142,127,0.16)] bg-[rgba(112,142,127,0.08)] text-[var(--ink)]"
+                } ${formState.status === "submitting" ? "opacity-85" : "opacity-100"}`}
                 role="status"
+                aria-live="polite"
               >
-                {formState.message}
-              </p>
+                {formState.status === "submitting" && (
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                    {formState.message}
+                  </span>
+                )}
+                {formState.status === "success" && <span>✓ {formState.message}</span>}
+                {formState.status === "error" && <span>⚠️ {formState.message}</span>}
+              </div>
             ) : null}
           </form>
         </div>
